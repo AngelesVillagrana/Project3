@@ -21,7 +21,7 @@ def api():
 
     with engine.connect() as conn:
 
-        findf=pd.read_sql('Select * From Met_Clean',con=conn)
+        findf=pd.read_sql('Select * From met_clean',con=conn)
         dfgroup=findf[['quality','residual sugar']].groupby('quality').mean()
         dfgroup.reset_index(inplace=True)
 
