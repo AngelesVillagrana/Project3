@@ -1,1 +1,0 @@
-CONNSTRING='postgresql+psycopg://postgres:postgres@localhost/Met_Clean'
