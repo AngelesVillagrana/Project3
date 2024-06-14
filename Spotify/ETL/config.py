@@ -1,1 +1,1 @@
-CONNSTRING='postgresql+psycopg://postgres:postgres@localhost/Met_Clean'
+CONNSTRING='postgresql+psycopg://postgres:postgres@localhost/Songs_Spotify'

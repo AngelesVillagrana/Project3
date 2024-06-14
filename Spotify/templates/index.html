@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> MET Artworks Visualization</title>
+    <title>Spotify Top Hits 2000-2019 Visualization</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
-    <div id="map" class="map-container"></div>
+    <div id="graph" class="graph-container"></div>
     <div class="container">
-        <div id="keywords" class="section keywords"></div>
-        <div id="random-artworks" class="section artworks"></div>
+        <!-- Dropdown menu -->
+        <select id="chartSelector">
+            <option value="chart1">Chart 1</option>
+            <option value="chart2">Chart 2</option>
+            <option value="chart3">Chart 3</option>
+        </select>
+        <!-- Placeholder for the chart -->
+        <canvas id="myChart"></canvas>
     </div>
-    <script src="script.js"></script>
+    <script src="charts.js"></script>
 </body>
 </html>
