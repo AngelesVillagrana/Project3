@@ -1,22 +1,19 @@
-d3.json('/api/chart1').then(data=> 
-    {console.log(data)
-
-})
-
-// Create our first trace
-let trace1 = {
-    x: [0, 1, 2, 3, 4, 5],
-    y: [0, 5, 10, 15, 20, 25],
-    type: "bar"
-  };
-  // Create our second trace
-  let trace2 = {
-    x: [0, 1, 2, 3, 4, 5],
-    y: [0, 1, 4, 9, 16, 25],
-    type: "scatter"
-  };
-  // The data array consists of both traces
-  let data = [trace1, trace2];
-  // Note that we omitted the layout object this time
-  // This will use default parameters for the layout
-  Plotly.newPlot("plot", data);
+d3.json('/api/piechart').then(some=>{
+    let explicit=some.map(elem=>{
+        return elem['Explicit']
+    });
+    let numb =some.map(elem=>{
+        return elem ['Numberexplicit']
+    })
+    console.log(numb)
+    let trace1 = {
+    x: explicit,
+    y: numb,
+    type: 'bar'
+    };
+    let data = [trace1];
+    let layout = {
+    title: 'My Plot'
+    };
+    Plotly.newPlot("plot", data, layout);
+});
