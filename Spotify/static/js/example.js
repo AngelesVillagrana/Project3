@@ -1,22 +1,22 @@
-d3.json('/api/piechart').then(some=>{
-    let explicit=some.map(elem=>{
-        return elem['Explicit']
-    });
-    let numb =some.map(elem=>{
-        return elem ['Numberexplicit']
-    })
-    console.log(numb)
+d3.json('/api/piechart').then(some => {
+    let labels = some.map(elem => elem['Explicit']? 'Explicit Content' : 'Non-explicit Content');
+    let values = some.map(elem => elem['Numberexplicit']);
+    
     let trace1 = {
-    x: explicit,
-    y: numb,
-    type: 'bar'
+        labels: labels,
+        values: values,
+        type: 'pie'
     };
+    
     let data = [trace1];
+    
     let layout = {
-    title: 'Pie Chart: Amount of explicit content'
+        title: 'Pie Chart: Amount of explicit content'
     };
+    
     Plotly.newPlot("piechart", data, layout);
 });
+
 
 //Api Endpoints for the DropDown Menu
 // Function to fetch and update chart based on selected option
