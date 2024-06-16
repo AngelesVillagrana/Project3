@@ -22,6 +22,9 @@ d3.json('/api/piechart').then(some => {
 // Function to fetch and update chart based on selected option
 
 function updateChart(endpoint) {
+    // Create constant for chart Title 
+    const chartTitle = document.getElementById('chartSelector').value;
+    //Fetch data
     d3.json(endpoint).then(data => {
 
         // Assuming the keys are dynamic and vary per endpoint, adjust accordingly
@@ -65,7 +68,7 @@ function updateChart(endpoint) {
         // Define the data and layout for the plot
         let plotData = [trace];
         let plotLayout = {
-            title: `Chart from ${endpoint}`
+            title: `${chartTitle}`
         };
 
         // Clear previous plot
