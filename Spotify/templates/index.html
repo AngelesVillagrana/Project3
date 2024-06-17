@@ -92,6 +92,9 @@
                 let years = Object.keys(yearCounts);
                 let counts = Object.values(yearCounts);
 
+                // Store the original background color for reset purposes
+                let originalBackgroundColors = years.map(() => 'rgba(54, 162, 235, 0.2)');
+
                 // Create the timeline chart
                 let ctx = document.getElementById('timelineChart').getContext('2d');
                 let timelineChart = new Chart(ctx, {
@@ -137,6 +140,14 @@
                                     row.insertCell(1).innerText = song.artist;
                                     row.insertCell(2).innerText = song.popularity;
                                 });
+                                 // Reset the background colors
+                                 timelineChart.data.datasets[0].backgroundColor = originalBackgroundColors.slice();
+                                 
+                                 // Highlight the clicked bar
+                                 timelineChart.data.datasets[0].backgroundColor[index] = 'rgba(0, 0, 139, 0.5)';
+
+                                 // Update the chart
+                                 timelineChart.update();
                             }
                         }
                     }
