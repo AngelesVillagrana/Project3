@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Define the data and layout for the plot
             let plotData = [trace];
             let plotLayout = {
-                title: selectedValue,
+                //title: selectedValue,
                 xaxis: {
                     title: xTitle,
                     tickmode: 'linear',
@@ -132,8 +132,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     t: 30,
                     pad: 10
                 },
-                paper_bgcolor: 'rgba(245, 246, 249, 1)',
-                plot_bgcolor: 'rgba(245, 246, 249, 1)',
+                paper_bgcolor: 'rgba(255, 255, 255, 1)',
+                plot_bgcolor: 'rgba(255, 255, 255, 1)',
                 showlegend: false
             };
 
