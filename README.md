@@ -1,45 +1,63 @@
 # Spotify Songs Visualization
 
-## Overview
+## Purpose
 
 This project aims to visualize Spotify song data to provide insights into various aspects of the songs, such as their explicit content, release dates, and popularity. The data is stored in a PostgreSQL database and presented using a Flask web application. Users can interact with the visualizations to explore the data.
 
-## Project Structure
+## How to Use and Interact with the Project
 
-- **app.py**: Main Flask application file.
-- **config.py**: Configuration file containing the database connection string.
-- **templates/**: Directory containing HTML templates.
-  - **index.html**: Main page template.
-  - **link.html**: Additional page template.
-- **static/**: Directory containing static files like CSS and JavaScript.
-- **README.md**: Project documentation.
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/your-username/spotify-top-hits-visualization.git
+    cd spotify-top-hits-visualization
+    ```
+
+2. **Set Up the Environment**:
+    - Install the required Python packages:
+        ```bash
+        pip install -r requirements.txt
+        ```
+
+3. **Set Up the Database**:
+    - Ensure you have PostgreSQL installed and running.
+    - Create a database named `Songs_Spotify`.
+    - Update the `CONNSTRING` in `app.py` with your PostgreSQL username and password.
+
+4. **Run the Flask Application**:
+    ```bash
+    python app.py
+    ```
+
+5. **Access the Application**:
+    - Open a web browser and navigate to `http://localhost:5000` (or the specified port if changed).
+
+6. **Interact with the Visualizations**:
+    - Use the dropdown menu to select different charts and visualizations.
+    - Explore the insights provided by the charts on song popularity and other metrics.
 
 
 ## Visualizations
 
 The application provides several visualizations to help users understand the Spotify songs data:
 
-1. **Chart 1**: Number of explicit and non-explicit songs.
+1. **Chart 1**: Danceability VS Popularity
    - Endpoint: `/api/chart1`
 
-2. **Chart 2**: Detailed song information.
+2. **Chart 2**: Duration VS Popularity
    - Endpoint: `/api/chart2`
 
-3. **Chart 3**: Additional song details.
+3. **Chart 3**: Loudness VS Popularity
    - Endpoint: `/api/chart3`
 
-4. **Pie Chart**: Distribution of explicit songs.
+4. **Pie Chart**: Explicit Content
+   - Endpoint: `/api/piechart`
+  
+5. **Pie Chart**: Songs Per Year
    - Endpoint: `/api/piechart`
   
 6. **Timeline/Bar Chart**: Total amount of songs per year and listing of the top 10,
    - Code written inside index.html for troublehsooting (created with charts.js).
 
-
-## Usage Instructions
-
-- Navigate to the main page to see an overview of the available visualizations.
-- Use the links provided to explore different data visualizations.
-- The data is dynamically fetched from the PostgreSQL database and displayed in a user-friendly manner.
 
 ## Ethical Considerations
 
