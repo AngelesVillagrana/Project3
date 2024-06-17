@@ -30,6 +30,10 @@ The application provides several visualizations to help users understand the Spo
 
 4. **Pie Chart**: Distribution of explicit songs.
    - Endpoint: `/api/piechart`
+  
+6. **Timeline/Bar Chart**: Total amount of songs per year and listing of the top 10,
+   - Code written inside index.html for troublehsooting (created with charts.js).
+
 
 ## Usage Instructions
 
@@ -51,3 +55,4 @@ When working with data, it is essential to consider ethical implications such as
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [SQLAlchemy Documentation](https://www.sqlalchemy.org/)
 - [pandas Documentation](https://pandas.pydata.org/)
+- [Charts.js' GitHub](https://github.com/chartjs/Chart.js)
