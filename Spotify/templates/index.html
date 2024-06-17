@@ -6,25 +6,156 @@
     <title>Spotify Top Hits 2000-2019 Visualization</title>
     <link rel="stylesheet" href="/static/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 <body>
+    <h1>Spotify Top Hits 2000-2019 Visualization</h1>
 
-    <div id="graph" class="graph-container"></div>
+    <div class="subtitle">Explore the Top Hits from 2000 to 2019</div>
+    <div class="description">
+        <p>This website analyzes the top tracks on Spotify from 2000 to 2019, examining the relationship between song duration, loudness, and danceability with their popularity.</p>
+        <p>Additionally, it showcases the prevalence of explicit content over the years and provides a timeline that captures key trends and insights from the data.</p>
+        <p>Dive into the visualizations to uncover what makes a hit song and how musical trends have evolved over the past two decades.</p>
+    </div>
+    <div class="subtitle">Explore the correlation of popularity with song duration, danceability and loudness</div>
+
+    <!--<div id="graph" class="graph-container"></div>-->
     <div class="container">
         <!-- Dropdown menu -->
         <select id="chartSelector">
-            <option value="chart1">Chart 1</option>
-            <option value="chart2">Chart 2</option>
-            <option value="chart3">Chart 3</option>
+            <option value="Danceability vs. Popularity">Danceability vs. Popularity</option>
+            <option value="Duration vs. Popularity">Duration vs. Popularity</option>
+            <option value="Loudness vs. Popularity">Loudness vs. Popularity</option>
         </select>
         <!-- Placeholder for the chart -->
-        <canvas id="myChart"></canvas>
+        <div id="plot"></div>
+        <!-- Placeholder for the description of the chart -->
+        <div id="descriptionChart"></div>
     </div>
-    <div id="plot" class="graph-container"></div>
+    
+    <div class="container">
+        <select id="chartSelector2">
+            <option value="Explicit content">Explicit content</option>
+            <option value="Songs per year">Songs per year</option>
+        </select>
+        <div id="piechart"></div>
+        <div id="descriptionChart2"></div>
+    </div>
+
     <script src="/static/js/example.js"></script>
+    <script src="/static/js/Pie_chart.js"></script>
+
+   <!-- Agregar codigo de timeline (lo que sería codigo de JavaScript usandp charts.js)-->
+ <canvas id="timelineChart" width="400" height="200"></canvas>
+ <table id="topSongsTable" style="width: 400px; margin-top: 10px;">
+     <thead>
+         <tr>
+             <th>Title</th>
+             <th>Artist</th>
+             <th>Popularity</th>
+         </tr>
+     </thead>
+     <tbody></tbody>
+ </table>
+
+<script>
+
+ fetch('/api/timeline')
+            .then(response => response.json())
+            .then(data => {
+                
+
+                let yearCounts = {};
+                let topSongsByYear = {};
+
+                data.forEach(row => {
+                    let year = row.year;
+                    if (!yearCounts[year]) {
+                        yearCounts[year] = 0;
+                        topSongsByYear[year] = [];
+                    }
+                    yearCounts[year]++;
+                    topSongsByYear[year].push(row);
+                });
+
+                // Sort top songs by popularity for each year and keep top 10
+                for (let year in topSongsByYear) {
+                    topSongsByYear[year].sort((a, b) => b.popularity - a.popularity);
+                    topSongsByYear[year] = topSongsByYear[year].slice(0, 10);
+                }
+
+                // Data para Chart.js
+                let years = Object.keys(yearCounts);
+                let counts = Object.values(yearCounts);
+
+                // Store the original background color for reset purposes
+                let originalBackgroundColors = years.map(() => 'rgba(54, 162, 235, 0.2)');
+
+                // Create the timeline chart
+                let ctx = document.getElementById('timelineChart').getContext('2d');
+                let timelineChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: years,
+                        datasets: [{
+                            label: 'Number of Songs',
+                            data: counts,
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Year'
+                                }
+                            },
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Number of Songs'
+                                }
+                            }
+                        },
+                        onClick: function (event, activeElements) {
+                            if (activeElements.length > 0) {
+                                let index = activeElements[0].index;
+                                let year = years[index];
+                                let topSongs = topSongsByYear[year];
+
+                                // Populate the table with the top 10 songs
+                                let tbody = document.getElementById('topSongsTable').getElementsByTagName('tbody')[0];
+                                tbody.innerHTML = ''; // Clear previous data
+                                topSongs.forEach(song => {
+                                    let row = tbody.insertRow();
+                                    row.insertCell(0).innerText = song.title;
+                                    row.insertCell(1).innerText = song.artist;
+                                    row.insertCell(2).innerText = song.popularity;
+                                });
+                                 // Reset the background colors
+                                 timelineChart.data.datasets[0].backgroundColor = originalBackgroundColors.slice();
+                                 
+                                 // Highlight the clicked bar
+                                 timelineChart.data.datasets[0].backgroundColor[index] = 'rgba(0, 0, 139, 0.5)';
+
+                                 // Update the chart
+                                 timelineChart.update();
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+   <!--terminao codigo de timeline -->
+
+
 </body>
 </html>
