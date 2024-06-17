@@ -16,14 +16,6 @@ def hello_world():
 def link():
     return render_template('link.html')
 
-#@app.route('/api')
-# def api():
-
-#     with engine.connect() as conn:
-
-#         findf=pd.read_sql('Select * From songs',con=conn)
-
-#     return dfgroup.to_json(orient='records')
 
 @app.route('/api/chart1')
 def chart1_data():
@@ -48,6 +40,18 @@ def piechart_data():
     with engine.connect() as conn:
         df = pd.read_sql('SELECT distinct(explicit) as "Explicit", count(song) as "Numberexplicit" FROM songs group by Explicit', con=conn)  # Modify query as needed
     return df.to_json(orient='records')
+
+
+
+
+#aqui sacamos info del sql       #adaptar a datos para la linea de tiempo
+#-------------------------------------------------------------------------------------------------------------------------------------------------#
+@app.route('/api/timeline')
+def timeline_data():
+    with engine.connect() as conn:
+        df = pd.read_sql('SELECT popularity as "popularity", song as "title", artist as "artist", year as "year" FROM songs', con=conn)
+    return df.to_json(orient='records')
+#-------------------------------------------------------------------------------------------------------------------------------------------------#
 
 if __name__ == '__main__':
     app.run(debug=True)
