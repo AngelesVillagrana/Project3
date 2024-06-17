@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify Top Hits 2000-2019 Visualization</title>
+    <title>Spotify Top Hits 1999-2019 Visualization</title>
     <link rel="stylesheet" href="/static/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  
@@ -13,11 +13,11 @@
 </head>
 
 <body>
-    <h1>Spotify Top Hits 2000-2019 Visualization</h1>
+    <h1>Spotify Top Hits 1999-2019 Visualization</h1>
 
-    <div class="subtitle">Explore the Top Hits from 2000 to 2019</div>
+    <div class="subtitle">Explore the Top Hits from 1999 to 2019</div>
     <div class="description">
-        <p>This website analyzes the top tracks on Spotify from 2000 to 2019, examining the relationship between song duration, loudness, and danceability with their popularity.</p>
+        <p>This website analyzes the top tracks on Spotify from 1999 to 2019, examining the relationship between song duration, loudness, and danceability with their popularity.</p>
         <p>Additionally, it showcases the prevalence of explicit content over the years and provides a timeline that captures key trends and insights from the data.</p>
         <p>Dive into the visualizations to uncover what makes a hit song and how musical trends have evolved over the past two decades.</p>
     </div>
@@ -50,6 +50,13 @@
     <script src="/static/js/Pie_chart.js"></script>
 
    <!-- Agregar codigo de timeline (lo que sería codigo de JavaScript usandp charts.js)-->
+   <div class="subtitle">Top 10 songs per year Timeline/Bar chart</div>
+   <div class="description">
+    <p>  </p>
+    <p>The timeline/bar chart bellow sorts the amount of songs correspinding to every analyzed year.</p>
+    <p> Click any bar to see the list of Top 10 most popular songs for that year. </p>
+
+</div>
  <canvas id="timelineChart" width="400" height="200"></canvas>
  <table id="topSongsTable" style="width: 400px; margin-top: 10px;">
      <thead>
@@ -144,7 +151,7 @@
                                  timelineChart.data.datasets[0].backgroundColor = originalBackgroundColors.slice();
                                  
                                  // Highlight the clicked bar
-                                 timelineChart.data.datasets[0].backgroundColor[index] = 'rgba(0, 0, 139, 0.5)';
+                                 timelineChart.data.datasets[0].backgroundColor[index] = 'rgba(0, 0, 100, 0.86)';
 
                                  // Update the chart
                                  timelineChart.update();
