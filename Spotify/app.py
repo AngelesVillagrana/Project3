@@ -55,5 +55,14 @@ def piechart2_data():
         df = pd.read_sql('SELECT distinct(year) as "Year", count(song) as "songs" FROM songs group by Year order by Year', con=conn)
     return df.to_json(orient='records')
 
+#aqui sacamos info del sql       #adaptar a datos para la linea de tiempo
+#-------------------------------------------------------------------------------------------------------------------------------------------------#
+@app.route('/api/timeline')
+def timeline_data():
+    with engine.connect() as conn:
+        df = pd.read_sql('SELECT popularity as "popularity", song as "title", artist as "artist", year as "year" FROM songs', con=conn)
+    return df.to_json(orient='records')
+#-------------------------------------------------------------------------------------------------------------------------------------------------#
+
 if __name__ == '__main__':
     app.run(debug=True)
