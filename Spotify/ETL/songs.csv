@@ -43,7 +43,6 @@ Enrique Iglesias|Be With You|219360|3.656|False|1999|54|0.683|0.866|1|-5.436|0|0
 Toni Braxton|He Wasn't Man Enough|261933|4.36555|False|2000|66|0.739|0.947|11|-1.916|0|0.0411|0.00916|3.14e-05|0.326|0.766|88.009|pop, R&B
 Bow Wow|Bounce With Me (feat. Xscape) - Edited Album Version|175893|2.93155|False|2000|36|0.852|0.75|8|-5.153|1|0.168|0.434|0.0|0.265|0.934|72.016|hip hop, pop, R&B
 Dr. Dre|Forgot About Dre|222293|3.7048833333333335|True|1999|79|0.924|0.74|8|-1.299|1|0.0774|0.0827|0.0|0.163|0.621|133.974|hip hop
-Missy Elliott|Hot Boyz|215466|3.5911|True|1998|49|0.727|0.445|1|-11.241|1|0.291|0.339|0.0|0.18|0.527|81.125|hip hop, pop, R&B
 Backstreet Boys|Show Me the Meaning of Being Lonely|234960|3.916|False|1999|68|0.63|0.625|6|-5.088|0|0.0252|0.231|0.0|0.0765|0.683|167.998|pop
 Samantha Mumba|Gotta Tell You|201946|3.3657666666666666|False|2018|43|0.729|0.632|0|-8.75|0|0.0279|0.191|0.0|0.166|0.774|109.981|pop
 Mýa|Case Of The Ex (Whatcha Gonna Do)|236906|3.9484333333333335|False|2000|59|0.772|0.688|1|-4.715|0|0.0405|0.0548|9.79e-05|0.0725|0.348|98.0|pop, R&B
@@ -307,7 +306,6 @@ Counting Crows|Big Yellow Taxi|225426|3.7571|False|2003|50|0.669|0.873|8|-4.315|
 Black Eyed Peas|Where Is The Love?|272533|4.542216666666667|False|2003|68|0.835|0.687|5|-3.18|1|0.184|0.101|0.0|0.132|0.828|94.059|hip hop, pop
 Jennifer Lopez|Jenny from the Block (feat. Jadakiss & Styles P.) - Track Masters Remix|187840|3.1306666666666665|False|2002|70|0.845|0.768|6|-5.448|1|0.188|0.00733|5.04e-06|0.0575|0.96|100.0|hip hop, pop, R&B
 Black Eyed Peas|Shut Up|296186|4.9364333333333335|False|2003|56|0.81|0.714|2|-3.966|1|0.243|0.0637|0.0|0.237|0.561|112.968|hip hop, pop
-t.A.T.u.|All The Things She Said|214440|3.574|True|2020|39|0.527|0.834|5|-5.767|0|0.0474|0.0411|0.00599|0.105|0.381|179.92|pop
 Benny Benassi|Satisfaction (Isak Original Extended) - Benny Benassi Presents The Biz|285570|4.7595|False|2003|66|0.793|0.698|11|-3.626|1|0.104|0.163|0.145|0.0745|0.339|130.017|pop, Dance/Electronic
 Busta Rhymes|I Know What You Want (feat. Flipmode Squad)|324306|5.4051|True|2002|68|0.648|0.759|6|-4.315|1|0.306|0.0142|0.0|0.648|0.518|85.996|hip hop, pop
 Panjabi MC|Mundian to Bach Ke|244666|4.077766666666666|False|2003|61|0.778|0.879|8|-4.951|0|0.0371|0.399|0.792|0.15|0.942|98.077|World/Traditional, hip hop
@@ -567,7 +565,6 @@ Katie Melua|Nine Million Bicycles|197160|3.286|False|2005|60|0.534|0.247|0|-15.6
 Lil Jon & The East Side Boyz|Lovers And Friends|260600|4.343333333333334|True|2004|66|0.675|0.501|10|-6.183|1|0.22|0.0541|0.0|0.429|0.532|139.861|hip hop, pop
 Mariah Carey|Don't Forget About Us - Radio Edit|233866|3.8977666666666666|False|2005|0|0.7|0.529|10|-6.816|0|0.0395|0.0422|0.0|0.101|0.386|143.555|pop, R&B
 Ying Yang Twins|Wait (The Whisper Song)|179160|2.986|True|2005|57|0.933|0.513|7|-13.203|1|0.347|0.00112|0.00248|0.107|0.595|102.017|hip hop, pop
-Will Smith|Switch|197666|3.2944333333333335|False|2020|34|0.873|0.9|5|-4.325|0|0.18|0.0107|0.000502|0.556|0.478|102.516|hip hop, pop
 Bow Wow|Like You (feat. Ciara)|205840|3.4306666666666668|False|2005|66|0.714|0.6|6|-8.365|1|0.0876|0.0465|0.0|0.0646|0.504|82.017|hip hop, pop, R&B
 Kaiser Chiefs|Everyday I Love You Less And Less|217706|3.628433333333333|False|2005|58|0.49|0.956|1|-4.556|0|0.0407|0.00466|6.15e-06|0.242|0.577|160.028|rock
 Kelly Clarkson|Behind These Hazel Eyes|198973|3.3162166666666666|False|2004|59|0.548|0.889|9|-4.682|1|0.0382|0.00165|0.00109|0.197|0.425|90.048|pop, R&B
@@ -1990,7 +1987,6 @@ iann dior|gone girl|136568|2.276133333333333|True|2019|69|0.677|0.714|11|-5.637|
 Panic! At The Disco|High Hopes|190946|3.1824333333333334|False|2018|80|0.579|0.904|5|-2.729|1|0.0618|0.193|0.0|0.064|0.681|82.014|rock
 Marshmello|One Thing Right|181823|3.0303833333333334|False|2019|73|0.659|0.625|4|-2.253|1|0.045|0.0644|0.0|0.582|0.442|88.042|pop, Dance/Electronic
 Sam Smith|How Do You Sleep?|202204|3.3700666666666668|False|2019|73|0.477|0.682|1|-4.931|0|0.0925|0.153|0.0|0.0763|0.345|110.567|pop
-NSG|Options|240081|4.00135|True|2020|57|0.836|0.621|1|-4.684|0|0.0894|0.389|9.16e-05|0.104|0.762|101.993|World/Traditional, hip hop
 Normani|Motivation|193837|3.2306166666666667|False|2019|71|0.599|0.887|4|-3.967|1|0.0984|0.0192|1.21e-06|0.3|0.881|170.918|pop, R&B
 Joel Corry|Sorry|188640|3.144|False|2019|63|0.744|0.79|8|-4.617|0|0.0562|0.0547|0.000802|0.32|0.847|125.002|pop, Dance/Electronic
 Post Malone|Goodbyes (Feat. Young Thug)|174960|2.916|True|2019|1|0.58|0.653|5|-3.818|1|0.0745|0.447|0.0|0.111|0.175|150.231|hip hop
