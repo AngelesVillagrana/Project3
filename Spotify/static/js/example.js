@@ -1,24 +1,3 @@
-d3.json('/api/piechart').then(some => {
-    let labels = some.map(elem => elem['Explicit']? 'Explicit Content' : 'Non-explicit Content');
-    let values = some.map(elem => elem['Numberexplicit']);
-    
-    let trace1 = {
-        labels: labels,
-        values: values,
-        type: 'pie'
-    };
-    
-    let data = [trace1];
-    
-    let layout = {
-        title: 'Pie Chart: Amount of explicit content'
-    };
-    
-    Plotly.newPlot("piechart", data, layout);
-});
-
-//Update the chart and description based on the selected option.
-
 document.addEventListener('DOMContentLoaded', function() {
     const chartSelector = document.getElementById('chartSelector');
     const descriptionDiv = document.getElementById('descriptionChart');
