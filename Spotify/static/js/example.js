@@ -1,4 +1,4 @@
-d3.json('/api/piechart').then(some => {
+/* d3.json('/api/piechart').then(some => {
     let labels = some.map(elem => elem['Explicit']? 'Explicit Content' : 'Non-explicit Content');
     let values = some.map(elem => elem['Numberexplicit']);
     
@@ -15,7 +15,7 @@ d3.json('/api/piechart').then(some => {
     };
     
     Plotly.newPlot("piechart", data, layout);
-});
+}); */
 
 //Update the chart and description based on the selected option.
 
@@ -118,3 +118,4 @@ document.addEventListener('DOMContentLoaded', function() {
         updateChart(endpoint);
     });
 });
+

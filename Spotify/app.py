@@ -43,10 +43,16 @@ def chart3_data():
         df = pd.read_sql('SELECT popularity, loudness FROM songs', con=conn)  # Modify query as needed
     return df.to_json(orient='records')
 
-@app.route('/api/piechart')
+@app.route('/api/piechart1')
 def piechart_data():
     with engine.connect() as conn:
         df = pd.read_sql('SELECT distinct(explicit) as "Explicit", count(song) as "Numberexplicit" FROM songs group by Explicit', con=conn)  # Modify query as needed
+    return df.to_json(orient='records')
+
+@app.route('/api/piechart2')
+def piechart2_data():
+    with engine.connect() as conn:
+        df = pd.read_sql('SELECT distinct(year) as "Year", count(song) as "songs" FROM songs group by Year order by Year', con=conn)  # Modify query as needed
     return df.to_json(orient='records')
 
 if __name__ == '__main__':

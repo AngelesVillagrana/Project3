@@ -23,24 +23,28 @@
         uncover what makes a hit song and how musical trends have evolved over the past two decades.
     </div>
 
-    <!--<div id="graph" class="graph-container"></div>-->
+    <!-- First chart container -->
     <div class="container">
-        <!-- Dropdown menu -->
         <select id="chartSelector">
             <option value="Danceability vs. Popularity">Danceability vs. Popularity</option>
             <option value="Duration vs. Popularity">Duration vs. Popularity</option>
             <option value="Loudness vs. Popularity">Loudness vs. Popularity</option>
         </select>
-        <!-- Placeholder for the chart -->
         <div id="plot"></div>
-        <!-- Placeholder for the description of the chart -->
         <div id="descriptionChart"></div>
     </div>
 
+    <!-- Second chart container -->
+    <div class="container">
+        <select id="chartSelector2">
+            <option value="Explicit content">Explicit content</option>
+            <option value="Songs per year">Songs per year</option>
+        </select>
+        <div id="piechart"></div>
+        <div id="descriptionChart2"></div>
+    </div>
 
-    <div id="piechart" class="graph-container"></div>
-
-    
     <script src="/static/js/example.js"></script>
+    <script src="/static/js/Pie_chart.js"></script>
 </body>
 </html>
