@@ -3,15 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const descriptionDiv = document.getElementById('descriptionChart');
 
     const descriptions = {
-        'Danceability vs. Popularity': `<br><h3>This chart analyzes the relationship between danceability and popularity of songs from 2000 to 2019.</h3><br>
+        'Danceability vs. Popularity': `<br><h3>This chart analyzes the relationship between danceability and popularity of songs from 1999 to 2019.</h3><br>
         <strong>Examples:</strong> "Give It To Me" from Timbaland is the most danceable of all, with a danceability value of 0.97 .<br>
         "You Raise Me Up" from Westlife is the less danceable, with a value of 0.12.<br>`,
 
-        'Duration vs. Popularity': `<br><h3>This chart examines how the duration of songs, measured in minutes, impacts their popularity<br>on Spotify from 2000 to 2019.</h3><br>
+        'Duration vs. Popularity': `<br><h3>This chart examines how the duration of songs, measured in minutes, impacts their popularity<br>on Spotify from 1999 to 2019.</h3><br>
         <strong>Examples:</strong> "Mirrors" from Justin Timberlake has the longest duration with a value of 8.06 minutes.<br>
         "Old Town Road" from Lil Nas X has the shortest duration, with a value of 1.88 minutes.<br>`,
 
-        'Loudness vs. Popularity': `<br><h3>This chart explores the correlation between loudness and the popularity of songs over the years 2000 to 2019.</h3><br>
+        'Loudness vs. Popularity': `<br><h3>This chart explores the correlation between loudness and the popularity of songs over the years 1999 to 2019.</h3><br>
         <strong>Decibels (dB)</strong>: Decibels are a logarithmic unit used to measure the intensity of a sound. A 0 dB level represents a reference point, <br>
         which in the context of digital audio, often represents the maximum possible level of sound.<br> 
         <strong>Average Loudness</strong>: Music tracks are often quieter on average than the maximum possible sound level.<br>

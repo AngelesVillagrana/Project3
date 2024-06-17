@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const descriptionDiv = document.getElementById('descriptionChart2');
 
     const descriptions = {
-        'Explicit content': 'This chart explores the number of songs with explicit and the no-explicit ones.',
-        'Songs per year': 'This chart gives us the percentage of songs per year on the top 2000.'
+        'Explicit content': '<br><h3>This chart explores the number of songs with explicit content and the non-explicit ones.<br></h3>',
+        'Songs per year': '<br><h3>This chart gives us the percentage of songs per year on the top 2000.</br></h3>'
     };
 
     // Function to fetch and update chart based on selected option
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedValue = chartSelector.value;
 
         // Update the description
-        descriptionDiv.textContent = descriptions[selectedValue];
+        descriptionDiv.innerHTML = descriptions[selectedValue];
        
         // Fetch data
         d3.json(endpoint).then(data => {
@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 case '/api/piechart1':
                     labelsKey = 'Explicit';
                     valueKey = 'Numberexplicit';
+                    
                     break;
                 case '/api/piechart2':
                     labelsKey = 'Year';
