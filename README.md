@@ -53,7 +53,7 @@ The application provides several visualizations to help users understand the Spo
    - Endpoint: `/api/piechart`
   
 5. **Pie Chart**: Songs Per Year
-   - Endpoint: `/api/piechart`
+   - Endpoint: `/api/piechart2`
   
 6. **Timeline/Bar Chart**: Total amount of songs per year and listing of the top 10,
    - Code written inside index.html for troublehsooting (created with charts.js).
